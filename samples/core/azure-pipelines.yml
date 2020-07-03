@@ -1,0 +1,19 @@
+trigger:
+  branches:
+    include:
+      - "*"
+  tags:
+    include:
+      - "*"
+  paths:
+    include:
+      - samples/core
+pr: none
+
+stages:
+  - template: ../../build/azure-pipelines.yml
+    parameters:
+      configurations:
+        - name: ["samples", "core"]
+          machines: ["core"]
+          providers: ["virtualbox"]
