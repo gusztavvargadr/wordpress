@@ -12,7 +12,7 @@ stages:
       - ${{ each configuration in parameters.configurations }}:
           - ${{ each provider in configuration.providers }}:
               - job: validate_${{ replace(join('_', configuration.name), '-', '_') }}_${{ provider }}
-                displayName: Validate ${{ join('/', configuration.name) }} for ${{ provider }}
+                displayName: Validate ${{ join('.', configuration.name) }} for ${{ provider }}
 
                 pool:
                   name: Default
@@ -45,8 +45,8 @@ stages:
       - ${{ each configuration in parameters.configurations }}:
           - ${{ each machine in configuration.machines }}:
               - ${{ each provider in configuration.providers }}:
-                  - job: up_${{ replace(join('_', configuration.name), '-', '_') }}_${{ machine }}_${{ provider }}
-                    displayName: Up ${{ join('/', configuration.name) }} with ${{ machine }} for ${{ provider }}
+                  - job: up_${{ replace(join('_', configuration.name), '-', '_') }}_${{ replace(machine, '-', '_') }}_${{ provider }}
+                    displayName: Up ${{ join('.', configuration.name) }} with ${{ machine }} for ${{ provider }}
 
                     pool:
                       name: Default
