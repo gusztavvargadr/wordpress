@@ -30,4 +30,13 @@ Vagrant.configure("2") do |config|
     core.vm.provision "build", type: "shell", path: "./samples/gutenberg-editor/vagrant/build.sh", privileged: false
     core.vm.provision "start", type: "shell", path: "./samples/gutenberg-editor/vagrant/start.sh", privileged: false, run: "always"
   end
+
+  config.vm.define "gutenberg-block" do |core|
+    core.vm.network "forwarded_port", guest: 9999, host: 9999, auto_correct: true
+
+    core.vm.provision "clone", type: "shell", path: "./samples/gutenberg-block/vagrant/clone.sh", privileged: false
+    core.vm.provision "restore", type: "shell", path: "./samples/gutenberg-block/vagrant/restore.sh", privileged: false
+    core.vm.provision "build", type: "shell", path: "./samples/gutenberg-block/vagrant/build.sh", privileged: false
+    core.vm.provision "start", type: "shell", path: "./samples/gutenberg-block/vagrant/start.sh", privileged: false, run: "always"
+  end
 end
