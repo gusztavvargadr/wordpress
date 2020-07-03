@@ -1,0 +1,79 @@
+# parameters:
+#   configurations:
+#     - name: []
+#       machines: []
+#       providers: []
+
+stages:
+  - stage: commit
+    displayName: Commit
+
+    jobs:
+      - ${{ each configuration in parameters.configurations }}:
+          - ${{ each provider in configuration.providers }}:
+              - job: validate_${{ replace(join('_', configuration.name), '-', '_') }}_${{ provider }}
+                displayName: Validate ${{ join('.', configuration.name) }} for ${{ provider }}
+
+                pool:
+                  name: Default
+                  demands:
+                    - AZP_AGENT_VAGRANT
+                    - AZP_AGENT_${{ provider }}
+
+                workspace:
+                  clean: all
+
+                steps:
+                  - checkout: self
+                    submodules: recursive
+
+                  - script: |
+                      vagrant version
+                      vagrant plugin list
+                      vagrant box list
+                    displayName: Initialize
+
+                  - script: |
+                      cd ./${{ join('/', configuration.name) }}
+                      vagrant validate
+                    displayName: Test
+
+  - stage: acceptance
+    displayName: Acceptance
+
+    jobs:
+      - ${{ each configuration in parameters.configurations }}:
+          - ${{ each machine in configuration.machines }}:
+              - ${{ each provider in configuration.providers }}:
+                  - job: up_${{ replace(join('_', configuration.name), '-', '_') }}_${{ replace(machine, '-', '_') }}_${{ provider }}
+                    displayName: Up ${{ join('.', configuration.name) }} with ${{ machine }} for ${{ provider }}
+
+                    pool:
+                      name: Default
+                      demands:
+                        - AZP_AGENT_VAGRANT
+                        - AZP_AGENT_${{ provider }}
+
+                    workspace:
+                      clean: all
+
+                    steps:
+                      - checkout: self
+                        submodules: recursive
+
+                      - script: |
+                          vagrant version
+                          vagrant plugin list
+                          vagrant box list
+                        displayName: Initialize
+
+                      - script: |
+                          cd ./${{ join('/', configuration.name) }}
+                          vagrant up ${{ machine }} --provider ${{ provider }}
+                        displayName: Test
+
+                      - script: |
+                          cd ./${{ join('/', configuration.name) }}
+                          vagrant destroy --force ${{ machine }}
+                        displayName: Clean
+                        condition: always()
