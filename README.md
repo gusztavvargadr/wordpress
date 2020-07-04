@@ -1,10 +1,15 @@
 # WordPress
 
+**Samples** 
+[WordPress Core] [![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=298&branchName=master) |
+[Gutenberg Editor] [![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=299&branchName=master) |
+[Gutenberg Block] [![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master)  
+
 This repository contains [WordPress] [sample environments][Samples] and [experimental extensions][Extensions].
 
 ## Overview
 
-For working in an easy, platform agnostic way with proper isolation between different workloads, this repository supports working with [Vagrant], managing separate virtual machines for each environment with [VirtualBox], and connecting to them via [Visual Studio Code]. For ensuring that all the environments work as expected, they are automatically verified with [Azure DevOps].
+For working in a comfortable, platform-agnostic way with proper isolation between different workloads, this repository supports working with [Vagrant], managing separate virtual machines for each environment with [VirtualBox], and connecting to them via [Visual Studio Code]. For ensuring that all the settings work as expected, they are automatically verified with [Azure DevOps].
 
 ## Getting started
 
@@ -20,7 +25,7 @@ First, make sure you have these dependencies resolved for your platform:
 - Install [VirtualBox][VirtualBox Install].
   - Vagrant will manage VirtualBox for you, but in case you want to dig deeper, take a look at the [introduction][VirtualBox Getting Started].
 - Install [Visual Studio Code][Visual Studio Code Install].
-  - See the [basics of usage][Visual Studio Code Getting Started] for more information on getting around in Visual Studio Code.
+  - See the [basics of usage][Visual Studio Code Getting Started] for more information on getting around Visual Studio Code.
 
 ### Setting up an environment
 
@@ -36,12 +41,12 @@ To verify the installations and create an environment with Vagrant, follow these
 
 ### Working with an environment
 
-For a more advanced development experience, you can connect to this environment using Visual Studio Code as well.
+For a more advanced development experience, you can connect to this environment using Visual Studio Code.
 
 - Type `code .` to open Visual Studio Code from the same terminal and directory that you used for the Vagrant commands.
 - Install the recommended extensions, especially `Remote - SSH`.
-- Connect to the `gutenberg-block` environment using `Remote Explorer` and open the folder `/home/vagrant/source`. If being asked, use the default password `vagrant` for connecting.
-- Visual Studio Code automatically forwards the necessary ports from the virtual machine to the host to test your work easily. Just navigate your browser to http://localhost:9999 to see WordPress running the sample within the virtual machine.
+- Using `Remote Explorer`, connect to the `gutenberg-block` target and open the folder `/home/vagrant/source`. If being asked for it, use the default password `vagrant` when connecting.
+- Visual Studio Code automatically forwards the necessary ports from the virtual machine to the host to quickly test your work. Just navigate your browser to http://localhost:9999 to see WordPress running the sample within the virtual machine.
 
 ### Cleaning up
 
@@ -50,9 +55,9 @@ Once you're done exploring the sample, you can clean up your environment. Using 
 - Type `vagrant halt gutenberg-block` to shut down the virtual machine.
   - This will preserve the state of your work. Typing `vagrant up gutenberg-block` again will get you back where you've left off.
 - Type `vagrant destroy gutenberg-block` to remove the virtual machine.
-  - This will permanently delete the state, inclduing any changes to the cloned repositories. Typing `vagrant up gutenberg-block` again will get you a brand new environment.
+  - This will permanently delete the state, including any changes to the cloned repositories. Typing `vagrant up gutenberg-block` again will get you a brand new environment.
 
-In case you encounter any issues, take a look at and try to follow the process of the [latest automated build](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master) in Azure DevOps. Feel free to [open an issue][Contributing] if you need any more help, or if have any other questions or feedback.
+In case you encounter any issues, take a look at and try to follow the process of the [latest automated build](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master) in Azure DevOps. If you need any more help, have further questions or feedback, please feel free to [open an issue][Contributing].
 
 [Vagrant Install]: https://www.vagrantup.com/docs/installation
 [Vagrant Getting Started]: https://www.vagrantup.com/intro/getting-started
@@ -63,11 +68,25 @@ In case you encounter any issues, take a look at and try to follow the process o
 
 ## Usage
 
+This section quickly described all the samples and extensions that this repository contains.
+
 ### Samples
 
 Please see the [samples](./samples/) directory for more details.
 
 [Samples]: #samples
+
+#### WordPress Core
+
+[WordPress Core]: #wordpress-core
+
+#### Gutenberg Editor
+
+[Gutenberg Editor]: #gutenberg-editor
+
+#### Gutenberg Block
+
+[Gutenberg Block]: #gutenberg-block
 
 ### Extensions
 
