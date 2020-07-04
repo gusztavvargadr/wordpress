@@ -1,10 +1,5 @@
 # WordPress
 
-**Samples** 
-[WordPress Core] [![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=298&branchName=master) |
-[Gutenberg Editor] [![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=299&branchName=master) |
-[Gutenberg Block] [![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master)  
-
 This repository contains [WordPress] [sample environments][Samples] and [experimental extensions][Extensions].
 
 ## Overview
@@ -14,6 +9,8 @@ For working in a comfortable, platform-agnostic way with proper isolation betwee
 ## Getting started
 
 Follow the steps below to have your host ready to work with this repository.
+
+[Getting started]: #getting-started
 
 ### Prerequisites
 
@@ -68,23 +65,33 @@ In case you encounter any issues, take a look at and try to follow the process o
 
 ## Usage
 
-This section quickly described all the samples and extensions that this repository contains.
+This section describes all the samples and extensions that this repository contains. Follow the [above description][Getting started] with the specifics mentioned at each environment below to have them up and running.
 
 ### Samples
-
-Please see the [samples](./samples/) directory for more details.
 
 [Samples]: #samples
 
 #### WordPress Core
 
+[![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=298&branchName=master)
+
+https://make.wordpress.org/core/handbook/
+
 [WordPress Core]: #wordpress-core
 
 #### Gutenberg Editor
 
+[![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=299&branchName=master)
+
+https://developer.wordpress.org/block-editor/developers/
+
 [Gutenberg Editor]: #gutenberg-editor
 
 #### Gutenberg Block
+
+[![Build Status](https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.core?branchName=master)](https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master)
+
+https://developer.wordpress.org/block-editor/tutorials/block-tutorial/
 
 [Gutenberg Block]: #gutenberg-block
 
