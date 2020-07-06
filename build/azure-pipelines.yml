@@ -10,7 +10,7 @@ stages:
     jobs:
       - ${{ each configuration in parameters.configurations }}:
         - ${{ each provider in configuration.providers }}:
-          - job: validate_${{ replace(replace(configuration.name, '/', '_'), '-', _') }}_${{ provider }}
+          - job: validate_${{ replace(replace(configuration.name, '/', '_'), '-', '_') }}_${{ provider }}
             displayName: Validate ${{ replace(configuration.name, '/', '.') }} with ${{ provider }}
 
             pool:
@@ -43,7 +43,7 @@ stages:
     jobs:
       - ${{ each configuration in parameters.configurations }}:
         - ${{ each provider in configuration.providers }}:
-            - job: up_${{ replace(replace(configuration.name, '/', '_'), '-', _') }}_${{ provider }}
+            - job: up_${{ replace(replace(configuration.name, '/', '_'), '-', '_') }}_${{ provider }}
               displayName: Up ${{ replace(configuration.name, '/', '.') }} with ${{ provider }}
 
               pool:
