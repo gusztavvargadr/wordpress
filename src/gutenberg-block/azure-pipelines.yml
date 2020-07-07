@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include:
+      - '*'
+  tags:
+    include:
+      - '*'
+  paths:
+    include:
+      - src/gutenberg-block
+pr: none
+
+stages:
+  - template: ../../build/azure-pipelines.yml
+    parameters:
+      configurations:
+        - name: 'src/gutenberg-block'
+          providers: [ 'virtualbox' ]
