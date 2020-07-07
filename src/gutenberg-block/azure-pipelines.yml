@@ -7,12 +7,12 @@ trigger:
       - '*'
   paths:
     include:
-      - samples/gutenberg-block
+      - src/gutenberg-block
 pr: none
 
 stages:
   - template: ../../build/azure-pipelines.yml
     parameters:
       configurations:
-        - name: 'samples/gutenberg-block'
+        - name: 'src/gutenberg-block'
           providers: [ 'virtualbox' ]
