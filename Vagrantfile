@@ -7,6 +7,8 @@ Vagrant.configure("2") do |config|
     provider.memory = 2048
   end
 
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
   config.vm.provision "docker", type: "shell", path: "./build/vagrant/docker.sh", privileged: false
   config.vm.provision "node", type: "shell", path: "./build/vagrant/node.sh", privileged: false
   config.vm.provision "python", type: "shell", path: "./build/vagrant/python.sh", privileged: false
@@ -43,9 +45,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "src.gutenberg-block" do |config|
     config.vm.network "forwarded_port", guest: 22, host: 40022, auto_correct: true
 
-    config.vm.provision "clone", type: "shell", path: "./src/gutenberg-block/vagrant/clone.sh", privileged: false
-    # config.vm.provision "restore", type: "shell", path: "./src/gutenberg-block/vagrant/restore.sh", privileged: false
-    # config.vm.provision "build", type: "shell", path: "./src/gutenberg-block/vagrant/build.sh", privileged: false
-    # config.vm.provision "start", type: "shell", path: "./src/gutenberg-block/vagrant/start.sh", privileged: false, run: "always"
+    config.vm.synced_folder ".", "/home/vagrant/source"
+
+    config.vm.provision "restore", type: "shell", path: "./src/gutenberg-block/vagrant/restore.sh", privileged: false
+    config.vm.provision "build", type: "shell", path: "./src/gutenberg-block/vagrant/build.sh", privileged: false
+    config.vm.provision "start", type: "shell", path: "./src/gutenberg-block/vagrant/start.sh", privileged: false, run: "always"
   end
 end
