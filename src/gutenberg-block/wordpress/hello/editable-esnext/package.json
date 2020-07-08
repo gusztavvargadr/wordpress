@@ -1,7 +1,7 @@
 {
-  "name": "gutenberg-block-hello-js",
+  "name": "gutenberg-block-hello-editable-esnext",
   "version": "1.0.0",
-  "description": "Gutenberg Block Hello JS",
+  "description": "Gutenberg Block Hello Editable ESNext",
   "main": "build/index.js",
   "scripts": {
     "build": "wp-scripts build",
