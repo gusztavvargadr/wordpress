@@ -2,6 +2,10 @@
 
 cd ~/source/src/gutenberg-block/wordpress/
 
-pushd ./hello/js/
+pushd ./hello/static-esnext/
+npm run build
+popd
+
+pushd ./hello/editable-esnext/
 npm run build
 popd
