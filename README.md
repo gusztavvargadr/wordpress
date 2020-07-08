@@ -1,10 +1,14 @@
 # WordPress
 
+**Contents** [Overview] | [Getting started] | [Usage] | [Contributing] | [References]  
+
 This repository contains [WordPress] [sample environments][Samples] and [experimental extensions][Extensions].
 
 ## Overview
 
 For working in a comfortable, platform-agnostic way with proper isolation between different workloads, this repository supports working with [Vagrant], managing separate virtual machines for each environment with [VirtualBox], and connecting to them via [Visual Studio Code]. For ensuring that all the settings work as expected, they are automatically verified with [Azure DevOps].
+
+[Overview]: #overview
 
 ## Getting started
 
@@ -71,7 +75,7 @@ Once you're done exploring the sample, you can clean up your environment. Using 
 - Type `vagrant destroy samples.gutenberg-block` to remove the virtual machine.
   - This will permanently delete the state, including any changes to the cloned repositories. Typing `vagrant up samples.gutenberg-block` again will get you a brand new environment.
 
-In case you encounter any issues, take a look at and try to follow the process of the [latest automated build][Gutenberg Block Build Log] in Azure DevOps. If you need any more help, have further questions or feedback, please feel free to [open an issue][Contributing].
+In case you encounter any issues, take a look at and try to follow the process of the [latest automated build][Samples Gutenberg Block Build Log] in Azure DevOps. If you need any more help, have further questions or feedback, please feel free to [open an issue][Contributing].
 
 ## Usage
 
@@ -119,7 +123,7 @@ This is a sample environment for Gutenberg Editor development based on the [gett
 
 #### Gutenberg Block
 
-[![Gutenberg Block Build Status]][Gutenberg Block Build Log]
+[![Samples Gutenberg Block Build Status]][Samples Gutenberg Block Build Log]
 
 This is a sample environment for Gutenberg Block development based on the [getting started description][Gutenberg Block Getting Started]. Please see the [handbook][Gutenberg Block Handbook] for more information.
 
@@ -129,14 +133,41 @@ This is a sample environment for Gutenberg Block development based on the [getti
 
 [Gutenberg Block]: #gutenberg-block
 
-[Gutenberg Block Build Status]: https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.gutenberg-block?branchName=master
-[Gutenberg Block Build Log]: https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master
+[Samples Gutenberg Block Build Status]: https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/samples.gutenberg-block?branchName=master
+[Samples Gutenberg Block Build Log]: https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=300&branchName=master
 [Gutenberg Block Getting Started]: https://github.com/WordPress/gutenberg-examples#development
 [Gutenberg Block Handbook]: https://developer.wordpress.org/block-editor/tutorials/block-tutorial/
 
 ### Extensions
 
 [Extensions]: #extensions
+
+#### Gutenberg Block
+
+[![Extensions Gutenberg Block Build Status]][Extensions Gutenberg Block Build Log]
+
+This environment contains custom extensions for Gutenberg Block experiments.
+
+- Vagrant Environment `vagrant up src.gutenberg-block`
+- Visual Studio Code Remote SSH Target `src.gutenberg-block`
+- Visual Studio Code Remote SSH Forwarded Port http://localhost:40080
+
+After launching the environment, walk through the initial WordPress installation and activate the following plugins to to use the blocks.
+
+[Extensions Gutenberg Block Build Status]: https://dev.azure.com/gusztavvargadr/wordpress/_apis/build/status/src.gutenberg-block?branchName=master
+[Extensions Gutenberg Block Build Log]: https://dev.azure.com/gusztavvargadr/wordpress/_build/latest?definitionId=301&branchName=master
+
+##### Hello
+
+The plugin `Gutenberg Block Hello` implements the following blocks:
+
+- [Gutenberg Block Hello Quote Style], a style that can be applied to `Quote` blocks.
+- [Gutenberg Block Hello Static ESNext], a block showing static text.
+- [Gutenberg Block Hello Editable ESNext], a block showing editable text.
+
+[Gutenberg Block Hello Quote Style]: ./src/gutenberg-block/wordpress/hello/quote-style/
+[Gutenberg Block Hello Static ESNext]: ./src/gutenberg-block/wordpress/hello/static-esnext/
+[Gutenberg Block Hello Editable ESNext]: ./src/gutenberg-block/wordpress/hello/editable-esnext/
 
 ## Contributing
 
