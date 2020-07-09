@@ -11,5 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "@wordpress/scripts": "9.0"
+  },
+  "dependencies": {
+    "md5": "2.2"
   }
 }
