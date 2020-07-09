@@ -201,6 +201,7 @@ See what's going on over at [milestones] and [releases].
 This repository could not exist without the following great tools and services:
 
 - [WordPress]
+- [Gravatar]
 - [Vagrant]
 - [VirtualBox]
 - [Visual Studio Code]
