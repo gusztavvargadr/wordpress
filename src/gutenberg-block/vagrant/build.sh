@@ -9,3 +9,7 @@ popd
 pushd ./hello/editable-esnext/
 npm run build
 popd
+
+pushd ./gravatar/image/
+npm run build
+popd
