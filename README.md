@@ -169,6 +169,16 @@ The plugin `Gutenberg Block Hello` implements the following blocks:
 [Gutenberg Block Hello Static ESNext]: ./src/gutenberg-block/wordpress/hello/static-esnext/
 [Gutenberg Block Hello Editable ESNext]: ./src/gutenberg-block/wordpress/hello/editable-esnext/
 
+##### Gravatar
+
+The plugin `Gutenberg Block Gravatar` implements the following blocks:
+
+Block | Editor | Preview
+:--- | -- | ---
+[Gutenberg Block Gravatar Image], a block rendering [Gravatar] images | <img width="250" border="1" alt="gutenberg-block-gravatar-image-edit" src="https://user-images.githubusercontent.com/1721722/87074509-43790200-c21f-11ea-8f85-73e177878407.png"> | <img width="250" border="1" alt="gutenberg-block-gravatar-image-save" src="https://user-images.githubusercontent.com/1721722/87074527-483db600-c21f-11ea-95bf-a450e5a5a5a1.png">
+
+[Gutenberg Block Gravatar Image]: ./src/gutenberg-block/wordpress/gravatar/image/
+
 ## Contributing
 
 If you have any questions or feedback in general, feel free to [open an issue][Issues].
@@ -197,6 +207,7 @@ This repository could not exist without the following great tools and services:
 [References]: #references
 
 [WordPress]: https://www.wordpress.org/
+[Gravatar]: https://www.gravatar.com/
 [Vagrant]: https://www.vagrantup.com/
 [VirtualBox]: https://www.virtualbox.org/
 [Visual Studio Code]: https://code.visualstudio.com/
