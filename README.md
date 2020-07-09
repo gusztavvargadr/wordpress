@@ -161,9 +161,11 @@ After launching the environment, walk through the initial WordPress installation
 
 The plugin `Gutenberg Block Hello` implements the following blocks:
 
-- [Gutenberg Block Hello Quote Style], a style that can be applied to `Quote` blocks.
-- [Gutenberg Block Hello Static ESNext], a block showing static text.
-- [Gutenberg Block Hello Editable ESNext], a block showing editable text.
+Block | Editor | Preview
+:--- | -- | ---
+[Gutenberg Block Hello Quote Style]<br/>A style that can be applied to `Quote` blocks | <img width="250" alt="gutenberg-block-hello-quote-style-edit" src="https://user-images.githubusercontent.com/1721722/87076826-91433980-c222-11ea-9352-24a8456d89b0.png"> | <img width="250" alt="gutenberg-block-hello-quote-style-save" src="https://user-images.githubusercontent.com/1721722/87076828-91dbd000-c222-11ea-868f-d3c60992a0c5.png">
+[Gutenberg Block Hello Static ESNext]<br/>A block showing static text | <img width="250" alt="gutenberg-block-hello-static-esnext-edit" src="https://user-images.githubusercontent.com/1721722/87076829-92746680-c222-11ea-901d-281cf62a64d6.png"> | <img width="250" alt="gutenberg-block-hello-static-esnext-save" src="https://user-images.githubusercontent.com/1721722/87076830-92746680-c222-11ea-80a9-c718c7e8ad95.png">
+[Gutenberg Block Hello Editable ESNext]<br/>A block showing editable text | <img width="250" alt="gutenberg-block-hello-editable-esnext-edit" src="https://user-images.githubusercontent.com/1721722/87077167-03b41980-c223-11ea-8e8a-8b61be438496.png"> | <img width="250" alt="gutenberg-block-hello-editable-esnext-save" src="https://user-images.githubusercontent.com/1721722/87077171-044cb000-c223-11ea-9523-ccfa24cde23e.png">
 
 [Gutenberg Block Hello Quote Style]: ./src/gutenberg-block/wordpress/hello/quote-style/
 [Gutenberg Block Hello Static ESNext]: ./src/gutenberg-block/wordpress/hello/static-esnext/
@@ -175,7 +177,7 @@ The plugin `Gutenberg Block Gravatar` implements the following blocks:
 
 Block | Editor | Preview
 :--- | -- | ---
-[Gutenberg Block Gravatar Image], a block rendering [Gravatar] images | <img width="250" border="1" alt="gutenberg-block-gravatar-image-edit" src="https://user-images.githubusercontent.com/1721722/87074509-43790200-c21f-11ea-8f85-73e177878407.png"> | <img width="250" border="1" alt="gutenberg-block-gravatar-image-save" src="https://user-images.githubusercontent.com/1721722/87074527-483db600-c21f-11ea-95bf-a450e5a5a5a1.png">
+[Gutenberg Block Gravatar Image]<br/>A block showing [Gravatar] images | <img width="250" border="1" alt="gutenberg-block-gravatar-image-edit" src="https://user-images.githubusercontent.com/1721722/87074509-43790200-c21f-11ea-8f85-73e177878407.png"> | <img width="250" border="1" alt="gutenberg-block-gravatar-image-save" src="https://user-images.githubusercontent.com/1721722/87074527-483db600-c21f-11ea-95bf-a450e5a5a5a1.png">
 
 [Gutenberg Block Gravatar Image]: ./src/gutenberg-block/wordpress/gravatar/image/
 
