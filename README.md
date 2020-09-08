@@ -23,8 +23,8 @@ First, make sure you have these dependencies resolved for your platform:
 - Clone this repository.
 - Install [Vagrant][Vagrant Install].
   - If you have not used Vagrant before, consider taking a look at the [getting started guide][Vagrant Getting Started].
-- Install [VirtualBox][VirtualBox Install].
-  - Vagrant will manage VirtualBox for you, but in case you want to dig deeper, take a look at the [introduction][VirtualBox Getting Started].
+- Install [VirtualBox][VirtualBox Install] or [Hyper-V][HyperV Install].
+  - Vagrant will manage the virtual machines for you, but in case you want to dig deeper, take a look at the introduction for [VirtualBox][VirtualBox Getting Started] or [Hyper-V][HyperV Getting Started].
 - Install [Visual Studio Code][Visual Studio Code Install].
   - See the [basics of usage][Visual Studio Code Getting Started] for more information on getting around Visual Studio Code.
 
@@ -32,6 +32,8 @@ First, make sure you have these dependencies resolved for your platform:
 [Vagrant Getting Started]: https://www.vagrantup.com/intro/getting-started
 [VirtualBox Install]: https://www.virtualbox.org/manual/ch02.html
 [VirtualBox Getting Started]: https://www.virtualbox.org/manual/ch01.html
+[HyperV Install]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
+[HyperV Getting Started]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/
 [Visual Studio Code Install]: https://code.visualstudio.com/download
 [Visual Studio Code Getting Started]: https://code.visualstudio.com/docs/introvideos/basics
 
@@ -45,7 +47,7 @@ To verify the installations and create an environment with Vagrant, follow these
   - After that, using the downloaded box as a template, it will [create and boot a new virtual machine][Vagrant Create] using VirtualBox.
   - Next, it will [provision the virtual machine][Vagrant Provision] to be ready for WordPress development in general.
   - Finally, still within the virtual machine, it will [clone the repository][Vagrant Clone] for the environment, build the necessary components, and launch WordPress and all its dependencies.
-- Connect directly to the environment and open a terminal by typing `vagrant ssh samples.gutenberg-block`. The environment's repository and the produced artifacts are available in the `~/source` folder in the virtual machine.
+- Connect directly to the environment and open a terminal by typing `vagrant ssh samples.gutenberg-block`. The environment's repository and the produced artifacts are available in the `~/source/` folder in the virtual machine.
 
 [Vagrant Box]: https://app.vagrantup.com/gusztavvargadr/boxes/docker-linux
 [Vagrant Create]: ./Vagrantfile
@@ -58,7 +60,8 @@ For a more advanced development experience, you can connect to this environment 
 
 - Type `code .` to open Visual Studio Code from the same terminal and directory that you used for the Vagrant commands.
 - [Install the recommended extensions][Visual Studio Code Recommended Extensions], especially `Remote - SSH`.
-- Using `Remote Explorer`, [open the SSH configuration file][Visual Studio Core Remote SSH Config File] under `.ssh/config`. Then [connect to the target][Visual Studio Core Remote SSH Connect Target] `samples.gutenberg-block` and open the folder `/home/vagrant/source`. If being asked for it, use the default password `vagrant` when connecting.
+- Using `Remote Explorer`, [open the SSH configuration file][Visual Studio Core Remote SSH Config File] under `.ssh/config` and update the configuration with the output of `vagrant ssh-config samples.gutenberg-block`.
+- [Connect to the target][Visual Studio Core Remote SSH Connect Target] `samples.gutenberg-block` and open the folder `/home/vagrant/source`.
 - Visual Studio Code automatically [forwards the necessary ports][Visual Studio Code Remote SSH Forward Port] from the virtual machine to the host to quickly test your work. Just navigate your browser to http://localhost:9999 to see WordPress running the sample within the virtual machine.
 
 [Visual Studio Code Recommended Extensions]: https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions
@@ -93,8 +96,7 @@ This section describes all the [samples] and [extensions] that this repository c
 
 This is a sample environment for WordPress Core development based on the [getting started description][WordPress Core Getting Started]. Please see the [handbook][WordPress Core Handbook] for more information.
 
-- Vagrant Environment `vagrant up samples.core`
-- Visual Studio Code Remote SSH Target `samples.core`
+- Vagrant Environment and Visual Studio Code Remote SSH Target `samples.core`
 - Visual Studio Code Remote SSH Forwarded Port http://localhost:8889
 
 [WordPress Core]: #wordpress-core
@@ -110,8 +112,7 @@ This is a sample environment for WordPress Core development based on the [gettin
 
 This is a sample environment for Gutenberg Editor development based on the [getting started description][Gutenberg Editor Getting Started]. Please see the [handbook][Gutenberg Editor Handbook] for more information.
 
-- Vagrant Environment `vagrant up samples.gutenberg-editor`
-- Visual Studio Code Remote SSH Target `samples.gutenberg-editor`
+- Vagrant Environment and Visual Studio Code Remote SSH Target `samples.gutenberg-editor`
 - Visual Studio Code Remote SSH Forwarded Port http://localhost:8888
 
 [Gutenberg Editor]: #gutenberg-editor
@@ -127,8 +128,7 @@ This is a sample environment for Gutenberg Editor development based on the [gett
 
 This is a sample environment for Gutenberg Block development based on the [getting started description][Gutenberg Block Getting Started]. Please see the [handbook][Gutenberg Block Handbook] for more information.
 
-- Vagrant Environment `vagrant up samples.gutenberg-block`
-- Visual Studio Code Remote SSH Target `samples.gutenberg-block`
+- Vagrant Environment and Visual Studio Code Remote SSH Target `samples.gutenberg-block`
 - Visual Studio Code Remote SSH Forwarded Port http://localhost:9999
 
 [Gutenberg Block]: #gutenberg-block
@@ -148,9 +148,8 @@ This is a sample environment for Gutenberg Block development based on the [getti
 
 This environment contains custom extensions for Gutenberg Block experiments.
 
-- Vagrant Environment `vagrant up src.gutenberg-block`
-- Visual Studio Code Remote SSH Target `src.gutenberg-block`
-- Visual Studio Code Remote SSH Forwarded Port http://localhost:40080
+- Vagrant Environment and Visual Studio Code Remote SSH Target `src.gutenberg-block`
+- Visual Studio Code Remote SSH Forwarded Port http://localhost:9998
 
 After launching the environment, walk through the initial WordPress installation and activate the following plugins to to use the blocks.
 
@@ -204,6 +203,7 @@ This repository could not exist without the following great tools and services:
 - [Gravatar]
 - [Vagrant]
 - [VirtualBox]
+- [HyperV]
 - [Visual Studio Code]
 - [Azure DevOps]
 
@@ -213,5 +213,6 @@ This repository could not exist without the following great tools and services:
 [Gravatar]: https://www.gravatar.com/
 [Vagrant]: https://www.vagrantup.com/
 [VirtualBox]: https://www.virtualbox.org/
+[HyperV]: https://en.wikipedia.org/wiki/Hyper-V
 [Visual Studio Code]: https://code.visualstudio.com/
 [Azure DevOps]: https://azure.microsoft.com/en-us/services/devops/
