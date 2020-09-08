@@ -15,4 +15,4 @@ stages:
     parameters:
       configurations:
         - name: 'samples/gutenberg-editor'
-          providers: [ 'virtualbox' ]
+          providers: [ 'virtualbox', 'hyperv' ]
