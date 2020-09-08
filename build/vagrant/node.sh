@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # https://github.com/nodejs/help/wiki/Installation
-NODE_VERSION=v12.18.1
+NODE_VERSION=v12.18.3
 NODE_DISTRO=linux-x64
 
 curl -sO https://nodejs.org/dist/$NODE_VERSION/node-$NODE_VERSION-$NODE_DISTRO.tar.xz
