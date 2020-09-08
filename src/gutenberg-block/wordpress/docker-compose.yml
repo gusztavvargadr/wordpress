@@ -4,7 +4,7 @@ services:
   wordpress:
     image: wordpress:5.4
     ports:
-      - 40080:80
+      - 9998:80
     environment:
       WORDPRESS_DB_PASSWORD: example
     volumes:

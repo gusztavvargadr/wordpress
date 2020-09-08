@@ -15,4 +15,4 @@ stages:
     parameters:
       configurations:
         - name: 'src/gutenberg-block'
-          providers: [ 'virtualbox' ]
+          providers: [ 'virtualbox', 'hyperv' ]
