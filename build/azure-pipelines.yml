@@ -67,7 +67,7 @@ stages:
 
                     vagrant global-status
                     vagrant box list
-                displayName: Initialize
+                  displayName: Initialize
 
                 - script: |
                     cd ./${{ configuration.name }}
